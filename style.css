@@ -1,0 +1,46 @@
+.box {
+    text-align: center;
+    /* background-color: #999999; */
+  }
+  
+.centered {
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+  }
+
+.heading {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.message {
+    font-size: large;
+    text-align: left;
+    color: #999999; /* or any other shade of grey */
+}
+
+.input {
+        width: 300px;
+        height: 30px;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 20px;
+}
+
+.storyList p{
+    font-size: large;
+    text-align: left;
+    color: #999999;
+}
+
+.list li {
+    padding-top: 10px;
+    font-size: 20px;
+    list-style-type: decimal;
+}
