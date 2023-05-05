@@ -2,11 +2,21 @@ const api = "http://127.0.0.1/app/stories/";
 const params = new URLSearchParams(location.search);
 const story = params.get('storyname');
 const head = document.querySelector('.head');
+const button = document.querySelector('.button');
+
+// button
+button.addEventListener('click', e => {
+    if (button.innerHTML === 'play') {
+        button.innerHTML = 'pause';
+    } else {
+        button.innerHTML = 'play';
+    }
+});
 
 
 // heading on the page
 const heading = title => {
-    let html = `<h1>${title}</h1>`;
+    let html = `<h1 class="title">${title}</h1>`;
     head.innerHTML = html;
 };
 

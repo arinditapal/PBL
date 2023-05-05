@@ -1,0 +1,37 @@
+.box {
+    text-align: center;
+    /* background-color: #999999; */
+  }
+  
+.centered {
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+  }
+
+.heading {
+    font-size: 40px;
+    color: rgb(76, 76, 76);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.videobox {
+    border: 1px solid grey;
+    height: auto;
+}
+
+.control-panel {
+    margin-top: 20px;
+}
+
+.button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100px;
+    border: 1px solid rgba(90, 89, 89, 0.639);
+    font-size: large;
+    color: rgb(91, 91, 91);
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.921);
+}
