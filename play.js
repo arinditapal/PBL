@@ -1,32 +1,46 @@
 const api = "http://127.0.0.1/app/stories/";
 const params = new URLSearchParams(location.search);
 const story = params.get('storyname');
-const head = document.querySelector('.head');
+
+const head = document.querySelector('.heading');
 const button = document.querySelector('.button');
 
-// button
-button.addEventListener('click', e => {
-    if (button.innerHTML === 'play') {
-        button.innerHTML = 'pause';
-    } else {
-        button.innerHTML = 'play';
-    }
-});
+const synth = window.speechSynthesis;
+const utterance = new SpeechSynthesisUtterance();
 
+const speak = story => {
+  utterance.text = story;
+  synth.speak(utterance);
+}
+
+const pauseSpeech = () => {
+  synth.pause();
+}
+
+const resumeSpeech = () => {
+  synth.resume();
+}
 
 // heading on the page
 const heading = title => {
-    let html = `<h1 class="title">${title}</h1>`;
-    head.innerHTML = html;
+    head.innerHTML = title;
 };
-
 
 // text to speech function
-const speech = story => {
-    const text = story; 
-    const utterance = new SpeechSynthesisUtterance(text);
-    speechSynthesis.speak(utterance); 
-};
+const toggleSpeech = story => {
+    button.addEventListener('click', () => {
+        if (button.innerHTML === "Play") {
+            speak(story);
+            button.innerHTML = "Pause";
+        } else if (button.innerHTML === "Pause") {
+            pauseSpeech();
+            button.innerHTML = "Resume";
+        } else if (button.innerHTML === "Resume") {
+            resumeSpeech();
+            button.innerHTML = "Pause";
+        }
+    })
+}
 
 // full story object from database
 const search = storyname => {
@@ -38,11 +52,14 @@ const search = storyname => {
         .then(data => {
             if( data.length === 0 ){
                 // if story does not exist
+                console.log('no such story exits');
             }
 
+            // taking the closest match
             const story_object = data[0];
             heading(story_object.title);
-            //speech(story_object.content);
+            // speakTitle(story_object.title);
+            toggleSpeech(story_object.content);
         })
         .catch(error => {
             console.error(error);
