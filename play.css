@@ -17,12 +17,16 @@
 }
 
 .videobox {
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     height: auto;
 }
 
 .control-panel {
     margin-top: 20px;
+}
+
+.gif {
+    display: none;
 }
 
 .button {

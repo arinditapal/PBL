@@ -4,6 +4,7 @@ const story = params.get('storyname');
 
 const head = document.querySelector('.heading');
 const button = document.querySelector('.button');
+const gif = document.querySelector('.gif');
 
 const synth = window.speechSynthesis;
 const utterance = new SpeechSynthesisUtterance();
@@ -21,21 +22,23 @@ const resumeSpeech = () => {
   synth.resume();
 }
 
-// heading on the page
 const heading = title => {
     head.innerHTML = title;
 };
 
-// text to speech function
+
 const toggleSpeech = story => {
     button.addEventListener('click', () => {
         if (button.innerHTML === "Play") {
+            gif.style.display = "block";
             speak(story);
             button.innerHTML = "Pause";
         } else if (button.innerHTML === "Pause") {
+            gif.pause();
             pauseSpeech();
             button.innerHTML = "Resume";
         } else if (button.innerHTML === "Resume") {
+            gif.play();
             resumeSpeech();
             button.innerHTML = "Pause";
         }
