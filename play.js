@@ -5,6 +5,7 @@ const story = params.get('storyname');
 const head = document.querySelector('.heading');
 const button = document.querySelector('.button');
 const gif = document.querySelector('.gif');
+const video = document.querySelector('.vediobox');
 
 const synth = window.speechSynthesis;
 const utterance = new SpeechSynthesisUtterance();
@@ -29,16 +30,24 @@ const heading = title => {
 
 const toggleSpeech = story => {
     button.addEventListener('click', () => {
+
+        let html = '';
+
         if (button.innerHTML === "Play") {
-            gif.style.display = "block";
+            html = '<img class="gif" src="./gifs/boy_speaking.gif"></img>';
+            video.innerHTML = html;
             speak(story);
             button.innerHTML = "Pause";
+
         } else if (button.innerHTML === "Pause") {
-            gif.pause();
+            html = '<img class="img" src="./gifs/img.png" alt="My GIF">';
+            video.innerHTML = html;
             pauseSpeech();
             button.innerHTML = "Resume";
+
         } else if (button.innerHTML === "Resume") {
-            gif.play();
+            html = '<img class="gif" src="./gifs/boy_speaking.gif"></img>';
+            video.innerHTML = html;
             resumeSpeech();
             button.innerHTML = "Pause";
         }

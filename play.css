@@ -18,16 +18,21 @@
 
 .videobox {
     /* border: 1px solid grey; */
-    height: auto;
+    height: 500px;
+}
+
+.gif {
+    height: 500px;
+}
+
+.img {
+    height: 500px;
 }
 
 .control-panel {
     margin-top: 20px;
 }
 
-.gif {
-    display: none;
-}
 
 .button {
     padding-top: 15px;
