@@ -6,6 +6,7 @@ const head = document.querySelector('.heading');
 const button = document.querySelector('.button');
 const gif = document.querySelector('.gif');
 const video = document.querySelector('.vediobox');
+const img = document.querySelector('.img');
 
 const synth = window.speechSynthesis;
 const utterance = new SpeechSynthesisUtterance();
@@ -31,25 +32,31 @@ const heading = title => {
 const toggleSpeech = story => {
     button.addEventListener('click', () => {
 
-        let html = '';
+        console.log('you clicked me');
 
         if (button.innerHTML === "Play") {
-            html = '<img class="gif" src="./gifs/boy_speaking.gif"></img>';
-            video.innerHTML = html;
+            setTimeout(() => {
+                console.log('in the timeout zone');
+            }, 3000);
+            button.innerHTML = 'Pause';
+            img.src = './gifs/boy.gif';
             speak(story);
-            button.innerHTML = "Pause";
 
         } else if (button.innerHTML === "Pause") {
-            html = '<img class="img" src="./gifs/img.png" alt="My GIF">';
-            video.innerHTML = html;
+            setTimeout(() => {
+                console.log('in the timeout zone');
+            }, 1000);
+            button.innerHTML = 'Resume';
+            img.src = './gifs/img.png';
             pauseSpeech();
-            button.innerHTML = "Resume";
 
         } else if (button.innerHTML === "Resume") {
-            html = '<img class="gif" src="./gifs/boy_speaking.gif"></img>';
-            video.innerHTML = html;
+            setTimeout(() => {
+                console.log('in the timeout zone');
+            }, 1000);
+            button.innerHTML = 'Pause';
+            img.src = './gifs/boy.gif';
             resumeSpeech();
-            button.innerHTML = "Pause";
         }
     })
 }
