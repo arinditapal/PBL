@@ -14,9 +14,9 @@
             <div class="navbar">
                 <nav>
                     <ul id='MenuItems'>
-                        <li><a href='./home/home.html'> Home </a></li>
-                        <li><a href='./query.html'> Stories </a></li>
-                        <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login</button></li>
+                        <li><a href='query.html'> Home </a></li>
+                        <li><a href='query.html'> Stories </a></li>
+                        <!-- <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login</button></li> -->
                     </ul>
                 </nav>
             </div>
@@ -33,11 +33,18 @@
                     <input class="input" type="search" id="storyName" name="storyName" placeholder="search story...">
                 </form>
             </div>
-
             <!-- list of stories from database  -->
             <div class="storyList">
-                <p>Story to select from</p>
-                <ul id="list" class="list"></ul>
+                <div class="message">
+                    <p>Story to select from</p>
+                </div>
+                <ul id="list" class="list">
+                    <li>The Fox and the Grapes</li>
+                    <li>The thirsty crow</li>
+                    <li>Hansel and Gretel</li>
+                    <li>The Ugly Duckling</li>
+                    <li>King Midas and the Golden Touch</li>
+                </ul>
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@
 .centered {
     display: inline-block;
     width: 80%;
-    text-align: left;
+    text-align: center;
   }
 
 .heading {
@@ -21,7 +21,7 @@
 
 .message {
     font-size: large;
-    text-align: left;
+    text-align: center;
     color: #999999; /* or any other shade of grey */
 }
 
@@ -33,6 +33,10 @@
         font-size: 20px;
 }
 
+.storyList {
+    margin-top: 50px;
+}
+
 .storyList p{
     font-size: large;
     text-align: left;
@@ -40,6 +44,7 @@
 }
 
 .list li {
+    text-align: left;
     padding-top: 10px;
     font-size: 20px;
     list-style-type: decimal;
@@ -79,6 +84,6 @@ nav ul li a
 {
     text-decoration: none;
     font-size: 20px;
-    color: white;
+    color: black;
     font-family: sans-serif;
 }
